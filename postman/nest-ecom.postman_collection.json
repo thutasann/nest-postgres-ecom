@@ -1,152 +1,192 @@
 {
-  "info": {
-    "_postman_id": "80d65488-45d0-4140-bbcc-fe6e41eb3ec0",
-    "name": "nest-ecom",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "14049071"
-  },
-  "item": [
-    {
-      "name": "user",
-      "item": [
-        {
-          "name": "signup",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"name\": \"aung myo\",\n    \"email\": \"am@gmail.com\",\n    \"password\": \"123123\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:3000/api/v1/users/signup",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["api", "v1", "users", "signup"]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "signin",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImVtYWlsIjoiYW1AZ21haWwuY29tIiwiaWF0IjoxNjkyMjcyNDE5LCJleHAiOjE2OTIyNzQyMTl9.ygWGMlw3g0HKoFtCIlk0tw3c6XpHPY62H7AU77QXZg4",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"email\": \"myo@gmail.com\",\n    \"password\": \"123123\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:3000/api/v1/users/signin",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["api", "v1", "users", "signin"]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "find all users",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImVtYWlsIjoiYW1AZ21haWwuY29tIiwiaWF0IjoxNjkyMjcwMzM3LCJleHAiOjE2OTIyNzIxMzd9.CHK4yjY-j5ot-6wCzGO45UZ39oul7z5muEHwDeeA8ug",
-                "type": "text",
-                "disabled": true
-              }
-            ],
-            "body": {
-              "mode": "graphql",
-              "graphql": {
-                "query": "",
-                "variables": ""
-              }
-            },
-            "url": {
-              "raw": "http://localhost:3000/api/v1/users/all",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["api", "v1", "users", "all"]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "find one user",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "http://localhost:3000/api/v1/users/10",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["api", "v1", "users", "10"]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "profile",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWwiOiJteW9AZ21haWwuY29tIiwiaWF0IjoxNjkyMjczNTIzLCJleHAiOjE2OTIyNzUzMjN9.a9qh1BbX_Quko7nnP7qY6g5LYVHtTh3hS048Wa-rUVg",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "http://localhost:3000/api/v1/users/me",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["api", "v1", "users", "me"]
-            }
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "name": "welcome",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:3000/api/v1",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["api", "v1"]
-        }
-      },
-      "response": []
-    }
-  ]
+	"info": {
+		"_postman_id": "80d65488-45d0-4140-bbcc-fe6e41eb3ec0",
+		"name": "nest-ecom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14049071"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"aung myo\",\n    \"email\": \"am@gmail.com\",\n    \"password\": \"123123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImVtYWlsIjoiYW1AZ21haWwuY29tIiwiaWF0IjoxNjkyMjcyNDE5LCJleHAiOjE2OTIyNzQyMTl9.ygWGMlw3g0HKoFtCIlk0tw3c6XpHPY62H7AU77QXZg4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"myo@gmail.com\",\n    \"password\": \"123123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find all users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWwiOiJteW9AZ21haWwuY29tIiwiaWF0IjoxNjkyMjgzMzExLCJleHAiOjE2OTIyODUxMTF9.vPsOYlzpiSBNhAFt8W3Im4nkwjA-StUyd4LaQr3c4JQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find one user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/single/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"single",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWwiOiJteW9AZ21haWwuY29tIiwiaWF0IjoxNjkyMjgzMzExLCJleHAiOjE2OTIyODUxMTF9.vPsOYlzpiSBNhAFt8W3Im4nkwjA-StUyd4LaQr3c4JQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "welcome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
 }

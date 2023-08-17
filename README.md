@@ -29,3 +29,11 @@ yarn start:dev
 ```
 
 - Open [http://localhost:3000/api/v1](http://localhost:3000/api/v1) in **Postman** or **Insomnia**
+
+## Highlighted Learning outcome
+
+- middleware
+- guard
+- custom decorator
+- reflection and metadata
+- interceptor
