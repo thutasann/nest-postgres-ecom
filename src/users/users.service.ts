@@ -1,10 +1,11 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { UpdateUserDto } from './dto/update-user.dto';
 import { UserSignUpDto } from './dto/user-signup.dto.';
 import { UserEntity } from './entities/user.entity';
-import { hash } from 'bcrypt';
+import { compare, hash } from 'bcrypt';
+import { UserSignInDto } from './dto/user-signin.dto';
+import { sign } from 'jsonwebtoken';
 
 @Injectable()
 export class UsersService {
@@ -27,19 +28,38 @@ export class UsersService {
     return user;
   }
 
-  findAll() {
-    return `This action returns all users`;
+  async signin(userSignInDto: UserSignInDto): Promise<UserEntity> {
+    const userExists = await this.userRepository
+      .createQueryBuilder('users')
+      .addSelect('users.password')
+      .where('users.email=:email', { email: userSignInDto.email })
+      .getOne();
+
+    if (!userExists)
+      throw new BadRequestException('Email and Password do not match!');
+
+    const matchPassowrd = await compare(
+      userSignInDto.password,
+      userExists.password,
+    );
+
+    if (!matchPassowrd) throw new BadRequestException('Invalid Password');
+
+    delete userExists.password;
+
+    return userExists;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
-  }
-
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return updateUserDto;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  async generateToken(user: UserEntity): Promise<string> {
+    return sign(
+      {
+        id: user.id,
+        email: user.email,
+      },
+      process.env.TOKEN_SECRET,
+      {
+        expiresIn: process.env.TOKEN_EXPIRE_TIME,
+      },
+    );
   }
 }
