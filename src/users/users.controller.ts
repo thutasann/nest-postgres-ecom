@@ -17,9 +17,11 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Post('signup')
-  async signup(@Body() body: UserSignUpDto): Promise<{ user: UserEntity }> {
+  async signup(
+    @Body() userSignUpDto: UserSignUpDto,
+  ): Promise<{ user: UserEntity }> {
     return {
-      user: await this.usersService.signup(body),
+      user: await this.usersService.signup(userSignUpDto),
     };
   }
 
