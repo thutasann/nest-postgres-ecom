@@ -21,3 +21,11 @@ npm run migration:generate -- db/migrations/<migration-name>
 ```bash
 npm run migration:run
 ```
+
+### Start the server
+
+```
+yarn start:dev
+```
+
+- Open [http://localhost:3000/api/v1](http://localhost:3000/api/v1) in **Postman** or **Insomnia**
