@@ -5,9 +5,14 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { CurrentUserMiddleware } from './utility/middleware/current-user.middleware';
+import { CategoriesModule } from './categories/categories.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(datasSourceOptions), UsersModule],
+  imports: [
+    TypeOrmModule.forRoot(datasSourceOptions),
+    UsersModule,
+    CategoriesModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

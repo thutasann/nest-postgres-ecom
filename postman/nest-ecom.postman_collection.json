@@ -44,13 +44,7 @@
 					"name": "signin",
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImVtYWlsIjoiYW1AZ21haWwuY29tIiwiaWF0IjoxNjkyMjcyNDE5LCJleHAiOjE2OTIyNzQyMTl9.ygWGMlw3g0HKoFtCIlk0tw3c6XpHPY62H7AU77QXZg4",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"email\": \"myo@gmail.com\",\n    \"password\": \"123123\"\n}",
@@ -87,7 +81,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWwiOiJteW9AZ21haWwuY29tIiwiaWF0IjoxNjkyMjgzMzExLCJleHAiOjE2OTIyODUxMTF9.vPsOYlzpiSBNhAFt8W3Im4nkwjA-StUyd4LaQr3c4JQ",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJtaW5AZ21haWwuY29tIiwiaWF0IjoxNjkyMjg1NzQyLCJleHAiOjE2OTIyODc1NDJ9.FmZ4LqYnBBBTD7tw1Qb50ve8bixc9qrPxgoUTwxJYZA\"",
 								"type": "text"
 							}
 						],
@@ -161,6 +155,131 @@
 								"v1",
 								"users",
 								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "category-create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWwiOiJteW9AZ21haWwuY29tIiwiaWF0IjoxNjkyMjk3NTQzLCJleHAiOjE2OTIyOTkzNDN9.Fq_-bPI-zey4ELlGVK9HIbf3MyaDuoxN8WmHdygTbQM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"sport shoes\",\n    \"description\": \"this is sport shoes\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/categories/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find all categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/categories/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find one category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/categories/single/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"single",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "category-update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWwiOiJteW9AZ21haWwuY29tIiwiaWF0IjoxNjkyMjk3NTQzLCJleHAiOjE2OTIyOTkzNDN9.Fq_-bPI-zey4ELlGVK9HIbf3MyaDuoxN8WmHdygTbQM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"men shirt\",\n    \"description\": \"this is men shirt updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/categories/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"update",
+								"1"
 							]
 						}
 					},
