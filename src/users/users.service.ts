@@ -1,4 +1,8 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { UserSignUpDto } from './dto/user-signup.dto.';
@@ -61,5 +65,19 @@ export class UsersService {
         expiresIn: process.env.TOKEN_EXPIRE_TIME,
       },
     );
+  }
+
+  async findAll(): Promise<Array<UserEntity>> {
+    return await this.userRepository.find();
+  }
+
+  async findOne(id: number): Promise<UserEntity> {
+    const user = await this.userRepository.findOneBy({
+      id,
+    });
+
+    if (!user) throw new NotFoundException('user not found');
+
+    return user;
   }
 }
