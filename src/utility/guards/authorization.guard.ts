@@ -1,38 +1,26 @@
 import {
   CanActivate,
   ExecutionContext,
-  Injectable,
-  Logger,
+  mixin,
   UnauthorizedException,
 } from '@nestjs/common';
-import { Reflector } from '@nestjs/core';
 
 /**
  * Authorization Guard to check the currentUser is ADMIN or USER
  */
-@Injectable()
-export class AuthorizationGuard implements CanActivate {
-  private readonly logger = new Logger(AuthorizationGuard.name);
+export const AuthorizationGuard = (allowedRoles: string[]) => {
+  class RolesGuardMixin implements CanActivate {
+    canActivate(context: ExecutionContext): boolean {
+      const request = context.switchToHttp().getRequest();
+      const result = request?.currentUser?.roles
+        ?.map((role: string) => allowedRoles.includes(role))
+        .find((val: boolean) => val === true);
 
-  constructor(private reflector: Reflector) {}
+      if (result) return true;
 
-  canActivate(context: ExecutionContext): boolean {
-    const allowedRoles = this.reflector.get<string[]>(
-      'allowedRoles',
-      context.getHandler(),
-    );
-
-    this.logger.debug('ALLOWED_ROLES 🚀', allowedRoles);
-
-    const request = context.switchToHttp().getRequest();
-    this.logger.debug('REQUEST => CURRENT_USER', request?.currentUser);
-
-    const result = request?.currentUser?.roles
-      ?.map((role: string) => allowedRoles.includes(role))
-      .find((val: boolean) => val === true);
-
-    if (result) return true;
-
-    throw new UnauthorizedException('You are not Authorized!');
+      throw new UnauthorizedException('You are not Authorized!');
+    }
   }
-}
+  const guard = mixin(RolesGuardMixin);
+  return guard;
+};

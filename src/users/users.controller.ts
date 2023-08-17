@@ -37,7 +37,7 @@ export class UsersController {
   }
 
   @AuthorizeRoles(Roles.ADMIN)
-  @UseGuards(AuthenticationGuard, AuthorizationGuard)
+  @UseGuards(AuthenticationGuard, AuthorizationGuard([Roles.ADMIN]))
   @Get('all')
   async findAll(): Promise<Array<UserEntity>> {
     return await this.usersService.findAll();
