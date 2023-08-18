@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"aung myo\",\n    \"email\": \"am@gmail.com\",\n    \"password\": \"123123\"\n}",
+							"raw": "{\n    \"name\": \"hsuyeywel\",\n    \"email\": \"hsuyeywel@gmail.com\",\n    \"password\": \"123123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -47,7 +47,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"myo@gmail.com\",\n    \"password\": \"123123\"\n}",
+							"raw": "{\n    \"email\": \"hsuyeywel@gmail.com\",\n    \"password\": \"123123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -81,7 +81,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJtaW5AZ21haWwuY29tIiwiaWF0IjoxNjkyMjg1NzQyLCJleHAiOjE2OTIyODc1NDJ9.FmZ4LqYnBBBTD7tw1Qb50ve8bixc9qrPxgoUTwxJYZA\"",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJoc3V5ZXl3ZWxAZ21haWwuY29tIiwiaWF0IjoxNjkyMzM1Mzg2LCJleHAiOjE2OTIzMzcxODZ9.S1Czclerm4pCJ2Zy9WLF2t_A48bUQw1O2MqBjYYqolU",
 								"type": "text"
 							}
 						],
@@ -115,7 +115,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/v1/users/single/10",
+							"raw": "http://localhost:3000/api/v1/users/single/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -126,7 +126,7 @@
 								"v1",
 								"users",
 								"single",
-								"10"
+								"1"
 							]
 						}
 					},
@@ -172,13 +172,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWwiOiJteW9AZ21haWwuY29tIiwiaWF0IjoxNjkyMjk3NTQzLCJleHAiOjE2OTIyOTkzNDN9.Fq_-bPI-zey4ELlGVK9HIbf3MyaDuoxN8WmHdygTbQM",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJoc3V5ZXl3ZWxAZ21haWwuY29tIiwiaWF0IjoxNjkyMzM1Mzg2LCJleHAiOjE2OTIzMzcxODZ9.S1Czclerm4pCJ2Zy9WLF2t_A48bUQw1O2MqBjYYqolU",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"sport shoes\",\n    \"description\": \"this is sport shoes\"\n}",
+							"raw": "{\n    \"title\": \"Man Tshirt\",\n    \"description\": \"this is ManTshirt\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -280,6 +280,48 @@
 								"categories",
 								"update",
 								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "product-create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJoc3V5ZXl3ZWxAZ21haWwuY29tIiwiaWF0IjoxNjkyMzUzNzgxLCJleHAiOjE2OTIzNTU1ODF9.5CpVu6Nf9fLd-h2bP4mlXNKXj2qmVY5ZgWx3CQXu_bI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"product 1\",\n    \"description\": \"desc 1\",\n    \"price\": 25.00,\n    \"stock\": 14,\n    \"images\": [\"path1\", \"path2\"],\n    \"categoryId\" : 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/products/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"create"
 							]
 						}
 					},
