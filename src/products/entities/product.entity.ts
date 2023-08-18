@@ -1,4 +1,5 @@
 import { CategoryEntity } from 'src/categories/entities/category.entity';
+import { ReviewEntity } from 'src/reviews/entities/review.entity';
 import { UserEntity } from 'src/users/entities/user.entity';
 import {
   Column,
@@ -41,4 +42,7 @@ export class ProductEntity {
 
   @ManyToOne(() => CategoryEntity, (cate) => cate.products)
   category: CategoryEntity;
+
+  @ManyToOne(() => ReviewEntity, (rev) => rev.product)
+  reviews: ReviewEntity[];
 }
