@@ -6,12 +6,14 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { CurrentUserMiddleware } from './utility/middleware/current-user.middleware';
 import { CategoriesModule } from './categories/categories.module';
+import { ProductsModule } from './products/products.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(datasSourceOptions),
     UsersModule,
     CategoriesModule,
+    ProductsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
