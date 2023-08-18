@@ -303,7 +303,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"product 1\",\n    \"description\": \"desc 1\",\n    \"price\": 25.00,\n    \"stock\": 14,\n    \"images\": [\"path1\", \"path2\"],\n    \"categoryId\" : 1\n}",
+							"raw": "{\n    \"title\": \"product 2\",\n    \"description\": \"desc 2\",\n    \"price\": 50.00,\n    \"stock\": 12,\n    \"images\": [\"path1\", \"path2\"],\n    \"categoryId\" : 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -322,6 +322,102 @@
 								"v1",
 								"products",
 								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find all products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJoc3V5ZXl3ZWxAZ21haWwuY29tIiwiaWF0IjoxNjkyMzUzNzgxLCJleHAiOjE2OTIzNTU1ODF9.5CpVu6Nf9fLd-h2bP4mlXNKXj2qmVY5ZgWx3CQXu_bI",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find single product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/products/single/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"single",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJoc3V5ZXl3ZWxAZ21haWwuY29tIiwiaWF0IjoxNjkyMzU2OTUyLCJleHAiOjE2OTIzNTg3NTJ9.U7hEZyJrYx4ZUhPTVkHt4d_7qQirktq5BLSx-7Gumik",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"product 1 updated\",\n    \"description\": \"desc 1 updated\",\n    \"price\": 50.00,\n    \"stock\": 12,\n    \"images\": [\"path1\", \"path2\"],\n    \"categoryId\" : 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/products/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"update",
+								"1"
 							]
 						}
 					},
