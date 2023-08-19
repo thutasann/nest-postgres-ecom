@@ -37,3 +37,35 @@ npm run migration:run
 - custom decorator
 - reflection and metadata
 - interceptor
+
+## Postgres Comamnds
+
+### Check available Databases
+
+```bash
+\l;
+```
+
+### Establish a Connection With the Desired Database
+
+```bash
+\c nest_ecom_db;
+```
+
+### List All Tables
+
+```bash
+\dt+;
+```
+
+### Retrive/Update
+
+```bash
+SELECT * FROM users;
+```
+
+```bash
+UPDATE users
+SET roles = '{admin}'
+WHERE id = 1;
+```
