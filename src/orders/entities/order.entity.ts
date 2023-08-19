@@ -1,4 +1,3 @@
-import { UserEntity } from 'src/users/entities/user.entity';
 import {
   Column,
   CreateDateColumn,
@@ -11,8 +10,9 @@ import {
   Timestamp,
 } from 'typeorm';
 import { OrderStatus } from '../enums/order-status.enum';
-import { OrdersProductEntity } from './orders-products.entity';
+import { UserEntity } from 'src/users/entities/user.entity';
 import { ShippingEntity } from './shipping.entity';
+import { OrdersProductsEntity } from './orders-products.entity';
 
 @Entity({ name: 'orders' })
 export class OrderEntity {
@@ -22,11 +22,7 @@ export class OrderEntity {
   @CreateDateColumn()
   orderAt: Timestamp;
 
-  @Column({
-    type: 'enum',
-    enum: OrderStatus,
-    default: OrderStatus.PROCESSING,
-  })
+  @Column({ type: 'enum', enum: OrderStatus, default: OrderStatus.PROCESSING })
   status: string;
 
   @Column({ nullable: true })
@@ -42,6 +38,9 @@ export class OrderEntity {
   @JoinColumn()
   shippingAddress: ShippingEntity;
 
-  @OneToMany(() => OrdersProductEntity, (op) => op.order, { cascade: true })
-  products: OrdersProductEntity[];
+  @OneToMany(() => OrdersProductsEntity, (op) => op.order, { cascade: true })
+  products: OrdersProductsEntity[];
+
+  @ManyToOne(() => UserEntity, (user) => user.orders)
+  user: UserEntity;
 }

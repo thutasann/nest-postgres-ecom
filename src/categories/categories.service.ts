@@ -52,6 +52,11 @@ export class CategoriesService {
     if (!category) throw new NotFoundException('category not found');
     Object.assign(category, fields); // same with repository.create
 
+    console.log(
+      'Object.assign(category, fields);',
+      Object.assign(category, fields),
+    );
+
     return await this.categoryRepository.save(category);
   }
 

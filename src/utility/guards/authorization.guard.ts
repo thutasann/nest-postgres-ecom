@@ -2,13 +2,14 @@ import {
   CanActivate,
   ExecutionContext,
   mixin,
+  Type,
   UnauthorizedException,
 } from '@nestjs/common';
 
 /**
  * Authorization Guard to check the currentUser is ADMIN or USER
  */
-export const AuthorizationGuard = (allowedRoles: string[]) => {
+export const AuthorizationGuard = (allowedRoles: string[]): Type<any> => {
   class RolesGuardMixin implements CanActivate {
     canActivate(context: ExecutionContext): boolean {
       const request = context.switchToHttp().getRequest();

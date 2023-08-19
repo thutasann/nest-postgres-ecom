@@ -7,6 +7,9 @@ export class ShippingEntity {
   id: number;
 
   @Column()
+  phone: string;
+
+  @Column({ default: ' ' })
   name: string;
 
   @Column()

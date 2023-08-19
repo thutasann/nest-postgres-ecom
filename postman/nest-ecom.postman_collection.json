@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"hsuyeywel\",\n    \"email\": \"hsuyeywel@gmail.com\",\n    \"password\": \"123123\"\n}",
+							"raw": "{\n    \"name\": \"thutasann\",\n    \"email\": \"thutasann@gmail.com\",\n    \"password\": \"123123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -47,7 +47,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"hsuyeywel@gmail.com\",\n    \"password\": \"123123\"\n}",
+							"raw": "{\n    \"email\": \"thutasann@gmail.com\",\n    \"password\": \"123123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -172,7 +172,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJoc3V5ZXl3ZWxAZ21haWwuY29tIiwiaWF0IjoxNjkyMzM1Mzg2LCJleHAiOjE2OTIzMzcxODZ9.S1Czclerm4pCJ2Zy9WLF2t_A48bUQw1O2MqBjYYqolU",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJoc3V5ZXl3ZWxAZ21haWwuY29tIiwiaWF0IjoxNjkyNDQ3NjIyLCJleHAiOjE2OTI0NDk0MjJ9.n_jsx6gcqTZAFct17I42-o5pYY4eNfXYjbGcdutUgrs",
 								"type": "text"
 							}
 						],
@@ -254,13 +254,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWwiOiJteW9AZ21haWwuY29tIiwiaWF0IjoxNjkyMjk3NTQzLCJleHAiOjE2OTIyOTkzNDN9.Fq_-bPI-zey4ELlGVK9HIbf3MyaDuoxN8WmHdygTbQM",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJoc3V5ZXl3ZWxAZ21haWwuY29tIiwiaWF0IjoxNjkyNDU4MjkyLCJleHAiOjE2OTI0NjAwOTJ9.kjVTZTrri5o_pU3RDbP36icfobMMvd20xtMo5-05uMw",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"men shirt\",\n    \"description\": \"this is men shirt updated\"\n}",
+							"raw": "{\n    \"title\": \"men shirt updated\",\n    \"description\": \"this is men shirt updated\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -297,13 +297,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJoc3V5ZXl3ZWxAZ21haWwuY29tIiwiaWF0IjoxNjkyMzUzNzgxLCJleHAiOjE2OTIzNTU1ODF9.5CpVu6Nf9fLd-h2bP4mlXNKXj2qmVY5ZgWx3CQXu_bI",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJoc3V5ZXl3ZWxAZ21haWwuY29tIiwiaWF0IjoxNjkyNDYwMTY2LCJleHAiOjE2OTI0NjE5NjZ9.3_4h244ZsTDYPcjqrRep9FXPeKyJQcv8ijbwl0rCcBM",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"product 2\",\n    \"description\": \"desc 2\",\n    \"price\": 50.00,\n    \"stock\": 12,\n    \"images\": [\"path1\", \"path2\"],\n    \"categoryId\" : 1\n}",
+							"raw": "{\n    \"title\": \"product 5\",\n    \"description\": \"desc 5\",\n    \"price\": 70.00,\n    \"stock\": 12,\n    \"images\": [\"path1\", \"path2\"],\n    \"categoryId\" : 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -337,7 +337,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJoc3V5ZXl3ZWxAZ21haWwuY29tIiwiaWF0IjoxNjkyMzUzNzgxLCJleHAiOjE2OTIzNTU1ODF9.5CpVu6Nf9fLd-h2bP4mlXNKXj2qmVY5ZgWx3CQXu_bI",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJoc3V5ZXl3ZWxAZ21haWwuY29tIiwiaWF0IjoxNjkyNDYwMTY2LCJleHAiOjE2OTI0NjE5NjZ9.3_4h244ZsTDYPcjqrRep9FXPeKyJQcv8ijbwl0rCcBM",
 								"type": "text",
 								"disabled": true
 							}
@@ -471,7 +471,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/v1/all-reviews",
+							"raw": "http://localhost:3000/api/v1/reviews/all-reviews",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -480,6 +480,7 @@
 							"path": [
 								"api",
 								"v1",
+								"reviews",
 								"all-reviews"
 							]
 						}
@@ -538,6 +539,48 @@
 								"reviews",
 								"single-review",
 								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "create-order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ0aHV0YXNhbm5AZ21haWwuY29tIiwiaWF0IjoxNjkyNDY0MTE0LCJleHAiOjE2OTI0NjU5MTR9.sVObj5ibjUJszB3POY5jQQ3YaE2eFwrqppYXQB0bwZs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"shippingAddress\": {\n        \"phone\": \"12312312\",\n        \"name\": \"zaw zaw\",\n        \"address\": \"This is the address\",\n        \"city\": \"yangon\",\n        \"postCode\": \"1102\",\n        \"state\": \"state\",\n        \"country\": \"US\"\n    },\n    \"orderedProducts\": [\n        {\n            \"id\": 1,\n            \"product_unit_price\": 50.00,\n            \"product_quantity\": 3\n        },\n        {\n            \"id\": 2,\n            \"product_unit_price\": 70.00,\n            \"product_quantity\": 2\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/orders/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"create"
 							]
 						}
 					},

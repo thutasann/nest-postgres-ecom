@@ -1,9 +1,9 @@
-import { ProductEntity } from 'src/products/entities/product.entity';
-import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { OrderEntity } from './order.entity';
+import { ProductEntity } from 'src/products/entities/product.entity';
 
 @Entity({ name: 'orders_products' })
-export class OrdersProductEntity {
+export class OrdersProductsEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -13,9 +13,9 @@ export class OrdersProductEntity {
   @Column()
   product_quantity: number;
 
-  @ManyToMany(() => OrderEntity, (order) => order.products)
+  @ManyToOne(() => OrderEntity, (order) => order.products)
   order: OrderEntity;
 
-  @ManyToMany(() => ProductEntity, (prod) => prod.products, { cascade: true })
+  @ManyToOne(() => ProductEntity, (prod) => prod.products, { cascade: true })
   product: ProductEntity;
 }

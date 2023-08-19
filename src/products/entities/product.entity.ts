@@ -1,5 +1,5 @@
 import { CategoryEntity } from 'src/categories/entities/category.entity';
-import { OrdersProductEntity } from 'src/orders/entities/orders-products.entity';
+import { OrdersProductsEntity } from 'src/orders/entities/orders-products.entity';
 import { ReviewEntity } from 'src/reviews/entities/review.entity';
 import { UserEntity } from 'src/users/entities/user.entity';
 import {
@@ -42,12 +42,12 @@ export class ProductEntity {
   @ManyToOne(() => UserEntity, (user) => user.products)
   addedBy: UserEntity;
 
-  @ManyToOne(() => CategoryEntity, (cate) => cate.products)
+  @ManyToOne(() => CategoryEntity, (cat) => cat.products)
   category: CategoryEntity;
 
-  @ManyToOne(() => ReviewEntity, (rev) => rev.product)
+  @OneToMany(() => ReviewEntity, (rev) => rev.product)
   reviews: ReviewEntity[];
 
-  @OneToMany(() => OrdersProductEntity, (op) => op.product)
-  products: OrdersProductEntity[];
+  @OneToMany(() => OrdersProductsEntity, (op) => op.product)
+  products: OrdersProductsEntity[];
 }
