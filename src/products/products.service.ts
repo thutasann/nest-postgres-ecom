@@ -1,6 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CategoriesService } from 'src/categories/categories.service';
+import { OrderStatus } from 'src/orders/enums/order-status.enum';
 import { UserEntity } from 'src/users/entities/user.entity';
 import { Repository } from 'typeorm';
 import { CreateProductDto } from './dto/create-product.dto';
@@ -78,5 +79,19 @@ export class ProductsService {
 
   remove(id: number) {
     return `This action removes a #${id} product`;
+  }
+
+  /**
+   * Update Stock Service for Order
+   */
+  async updateStock(id: number, stock: number, status: string) {
+    let product = await this.findOne(id);
+    if (status === OrderStatus.DELIVERED) {
+      product.stock -= stock;
+    } else {
+      product.stock += stock;
+    }
+    product = await this.productRespository.save(product);
+    return product;
   }
 }
