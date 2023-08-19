@@ -30,7 +30,9 @@ export class ProductsService {
     return await this.productRespository.save(product);
   }
 
-  async findAll(query: any): Promise<any> {
+  async findAll(
+    query: any,
+  ): Promise<{ products: any[]; totalProducts: number; limit: number }> {
     let limit: number;
 
     if (!query.limit) {
@@ -95,7 +97,7 @@ export class ProductsService {
 
     const products = await queryBuilder.getRawMany();
 
-    return products;
+    return { products, totalProducts, limit };
   }
 
   async findOne(id: number): Promise<ProductEntity> {
